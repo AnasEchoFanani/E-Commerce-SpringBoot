@@ -20,7 +20,6 @@ public class Produit {
     private Double prix;
     private String image;
     @ManyToOne(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_category")
     private  Category category;
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)

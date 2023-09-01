@@ -1,36 +1,30 @@
 package com.siteWeb.eCommerce.entity;
 
+import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+@Data
+@EntityListeners(AuditingEntityListener.class)
 public class Panier {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int id_Produit;
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<Produit> produits;
     private int qte;
-
-    public Panier(int id_Produit, int qte) {
-        this.id_Produit = id_Produit;
-        this.qte = qte;
-    }
-
-    public int getQte() {
-        return qte;
-    }
-
-    public void setQte(int qte) {
-        this.qte = qte;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId_Produit() {
-        return id_Produit;
-    }
-
-    public void setId_Produit(int id_Produit) {
-        this.id_Produit = id_Produit;
-    }
+    @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private Date createdAt;
+    @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "modified_at")
+    private Date modifiedAt;
 }
