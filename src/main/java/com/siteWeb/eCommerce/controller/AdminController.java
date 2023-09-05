@@ -2,6 +2,7 @@ package com.siteWeb.eCommerce.controller;
 
 import com.siteWeb.eCommerce.entity.Category;
 import com.siteWeb.eCommerce.entity.Produit;
+import com.siteWeb.eCommerce.entity.Role;
 import com.siteWeb.eCommerce.service.AdminServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -78,4 +79,37 @@ public class AdminController {
     public Category deleteCategory(@RequestParam int id){
         return adminServiceInterface.delete_One_Category(id);
     }
+
+
+//___________________________________________________Roles___________________________________________________________
+
+    //_____Use api : http://192.168.11.130:8015/admin/all-role
+    @GetMapping("/all-role")
+    public List<Role> getAllRole() {
+        return adminServiceInterface.select_All_Role();
+    }
+
+    //_____Use api : http://192.168.11.130:8015/admin/add-role
+    @PostMapping("/add-role")
+    public Role addRole(@RequestBody Role role) {
+        role.setCreatedAt(new Date());
+        return adminServiceInterface.add_Role(role);
+    }
+
+    //_____Use api : http://192.168.11.130:8015/admin/update-role
+    @PutMapping("/update-role")
+    public Role updateRole(@RequestBody Role role){
+        role.setModifiedAt(new Date());
+        return adminServiceInterface.update_One_Role(role);
+    }
+
+    //_____Use api : http://192.168.11.130:8015/admin/delete-role
+    @DeleteMapping("/delete-role")
+    public Role deleteRole(@RequestParam int id){
+        return adminServiceInterface.delete_One_Role(id);
+    }
+
+
+
+
 }

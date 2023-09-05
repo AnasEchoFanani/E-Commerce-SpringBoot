@@ -15,7 +15,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nomCategori;
+    private String categoryName;
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, updatable = false)
