@@ -6,24 +6,76 @@ import com.siteWeb.eCommerce.service.AdminServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
+@CrossOrigin(origins = "http://localhost:3000")
 public class AdminController {
     @Autowired
     AdminServiceInterface adminServiceInterface;
 
+//______________________________________________Product______________________________________________________________
+
+
+    //_____Use api : http://192.168.11.130:8015/admin/all-product
     @GetMapping("/all-product")
     public List<Produit> getAllProducts() {
         return adminServiceInterface.select_All_Product();
     }
-    @PostMapping("/add")
+
+    //_____Use api : http://192.168.11.130:8015/admin/add-product
+    @PostMapping("/add-product")
     public Produit addProduct(@RequestBody Produit produit) {
-        System.out.println(produit);
-        System.out.println(produit.getCategory().getId());
         Category category = adminServiceInterface.selectOneCategory(produit.getCategory().getId());
         produit.setCategory(category);
+        produit.setCreatedAt(new Date());
         return adminServiceInterface.add_Product(produit);
+    }
+
+    //_____Use api : http://192.168.11.130:8015/admin/update-product
+    @PutMapping("/update-product")
+    public Produit updateProduct(@RequestBody Produit produit){
+        Category category = adminServiceInterface.selectOneCategory(produit.getCategory().getId());
+        produit.setCategory(category);
+        produit.setModifiedAt(new Date());
+        return adminServiceInterface.update_One_Product(produit);
+    }
+
+    //_____Use api : http://192.168.11.130:8015/admin/delete-product
+    @DeleteMapping("/delete-product")
+    public Produit deleteProduct(@RequestParam int id){
+        return adminServiceInterface.delete_One_Product(id);
+    }
+
+
+
+//____________________________________Category_____________________________________________________________________
+
+    //_____Use api : http://192.168.11.130:8015/admin/all-category
+    @GetMapping("/all-category")
+    public List<Category> getAllCategory() {
+        return adminServiceInterface.select_All_Category();
+    }
+
+    //_____Use api : http://192.168.11.130:8015/admin/add-category
+    @PostMapping("/add-category")
+    public Category addCategory(@RequestBody Category category) {
+        category.setCreatedAt(new Date());
+        return adminServiceInterface.add_Category(category);
+    }
+
+    //_____Use api : http://192.168.11.130:8015/admin/update-category
+    @PutMapping("/update-category")
+    public Category updateCategory(@RequestBody Category category){
+        category.setModifiedAt(new Date());
+        return adminServiceInterface.update_One_Category(category);
+    }
+
+    //_____Use api : http://192.168.11.130:8015/admin/delete-category
+    @DeleteMapping("/delete-category")
+    public Category deleteCategory(@RequestParam int id){
+        return adminServiceInterface.delete_One_Category(id);
     }
 }

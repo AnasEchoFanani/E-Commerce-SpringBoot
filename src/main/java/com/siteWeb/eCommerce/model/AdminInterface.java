@@ -6,10 +6,16 @@ import com.siteWeb.eCommerce.entity.Produit;
 import java.util.List;
 
 public interface AdminInterface {
+//______________________________________________Product______________________________________________________________
     public void Add_Product(Produit produit);
     public void Update_Product(Produit produit);
-    public Category Select_Category_By_Id(int id);
     public Produit Select_Product_By_Id(int id);
     public List<Produit> SelectAll_Product();
-    public void Delete_Product(int id);
+    public Produit Delete_Product(int id);
+//_________________________________________________Category__________________________________________________________
+    public void Add_Category(Category category);
+    public void Update_Category(Category category);
+    public Category Select_Category_By_Id(int id);
+    public List<Category> SelectAll_Category();
+    public Category Delete_Category(int id);
 }

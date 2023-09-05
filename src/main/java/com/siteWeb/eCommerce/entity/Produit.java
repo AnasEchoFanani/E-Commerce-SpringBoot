@@ -20,7 +20,7 @@ public class Produit {
     private int qnt;
     private Double prix;
     private String image;
-    @ManyToOne(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE , fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private  Category category;
     @CreatedDate
