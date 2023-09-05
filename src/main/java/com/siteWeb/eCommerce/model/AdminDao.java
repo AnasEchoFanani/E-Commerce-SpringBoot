@@ -1,5 +1,6 @@
 package com.siteWeb.eCommerce.model;
 
+import com.siteWeb.eCommerce.entity.Category;
 import com.siteWeb.eCommerce.entity.Produit;
 import com.siteWeb.eCommerce.model.AdminInterface;
 import org.springframework.stereotype.Repository;
@@ -27,6 +28,11 @@ public class AdminDao implements AdminInterface {
         Produit produit = entityManager.find(Produit.class,id);
         entityManager.close();
         return produit;
+    }
+    public Category Select_Category_By_Id(int id){
+        Category category = entityManager.find(Category.class,id);
+        entityManager.close();
+        return category;
     }
     public List<Produit> SelectAll_Product(){
         Query query = entityManager.createQuery("from Produit ");
