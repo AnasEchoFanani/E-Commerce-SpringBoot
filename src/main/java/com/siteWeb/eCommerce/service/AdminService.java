@@ -2,6 +2,7 @@ package com.siteWeb.eCommerce.service;
 
 import com.siteWeb.eCommerce.entity.Category;
 import com.siteWeb.eCommerce.entity.Produit;
+import com.siteWeb.eCommerce.entity.Role;
 import com.siteWeb.eCommerce.model.AdminInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,4 +53,25 @@ public class AdminService implements AdminServiceInterface{
     public Category delete_One_Category(int id){
         return adminInterface.Delete_Category(id);
     }
+
+//___________________________________________________Roles___________________________________________________________
+    public Role add_Role(Role role){
+        adminInterface.Add_Role(role);
+        return role;
+    }
+    public Role update_One_Role(Role role){
+        adminInterface.Update_Role(role);
+        return role;
+    }
+    public Role selectOneRole(int id){
+        return adminInterface.Select_Role_By_Id(id);
+    }
+    public List<Role> select_All_Role(){
+        return adminInterface.SelectAll_Role();
+    }
+    public Role delete_One_Role(int id){
+        return adminInterface.Delete_Role(id);
+    }
+
+
 }

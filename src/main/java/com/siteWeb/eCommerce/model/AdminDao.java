@@ -2,6 +2,7 @@ package com.siteWeb.eCommerce.model;
 
 import com.siteWeb.eCommerce.entity.Category;
 import com.siteWeb.eCommerce.entity.Produit;
+import com.siteWeb.eCommerce.entity.Role;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -69,5 +70,33 @@ public class AdminDao implements AdminInterface {
         entityManager.remove(category);
         entityManager.close();
         return category;
+    }
+
+
+//________________________________________Roles____________________________________________________________________
+    public void Add_Role(Role role){
+        entityManager.persist(role);
+        entityManager.close();
+    }
+    public void Update_Role(Role role){
+        entityManager.merge(role);
+        entityManager.close();
+    }
+    public Role Select_Role_By_Id(int id){
+        Role role = entityManager.find(Role.class,id);
+        entityManager.close();
+        return role;
+    }
+    public List<Role> SelectAll_Role(){
+        Query query = entityManager.createQuery("from Role");
+        List<Role> roleList = query.getResultList();
+        entityManager.close();
+        return roleList;
+    }
+    public Role Delete_Role(int id){
+        Role role = entityManager.find(Role.class, id);
+        entityManager.remove(role);
+        entityManager.close();
+        return role;
     }
 }
