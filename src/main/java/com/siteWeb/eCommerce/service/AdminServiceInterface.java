@@ -3,6 +3,7 @@ package com.siteWeb.eCommerce.service;
 import com.siteWeb.eCommerce.entity.Category;
 import com.siteWeb.eCommerce.entity.Produit;
 import com.siteWeb.eCommerce.entity.Role;
+import com.siteWeb.eCommerce.entity.User;
 
 import java.util.List;
 
@@ -28,4 +29,12 @@ public interface AdminServiceInterface {
     public Role selectOneRole(int id);
     public List<Role> select_All_Role();
     public Role delete_One_Role(int id);
+
+//_________________________________________________edite_user_____________________________________________________
+
+
+    public List<User> select_All_user();
+    public User selectOneUser(int id);
+    public User UpdateUserRole(User user);
+
 }

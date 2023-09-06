@@ -3,6 +3,7 @@ package com.siteWeb.eCommerce.model;
 import com.siteWeb.eCommerce.entity.Category;
 import com.siteWeb.eCommerce.entity.Produit;
 import com.siteWeb.eCommerce.entity.Role;
+import com.siteWeb.eCommerce.entity.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -98,5 +99,24 @@ public class AdminDao implements AdminInterface {
         entityManager.remove(role);
         entityManager.close();
         return role;
+    }
+
+//_________________________________________________edite_user________________________________________________________
+
+    public List<User> SelectAll_User(){
+        Query query = entityManager.createQuery("from User");
+        List<User> userList = query.getResultList();
+        entityManager.close();
+        return userList;
+    }
+    public User Select_User_By_Id(int id){
+        User user = entityManager.find(User.class,id);
+        entityManager.close();
+        return user;
+    }
+    public User Update_user_role(User user){
+        entityManager.merge(user);
+        entityManager.close();
+        return user;
     }
 }

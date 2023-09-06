@@ -3,6 +3,7 @@ package com.siteWeb.eCommerce.model;
 import com.siteWeb.eCommerce.entity.Category;
 import com.siteWeb.eCommerce.entity.Produit;
 import com.siteWeb.eCommerce.entity.Role;
+import com.siteWeb.eCommerce.entity.User;
 
 import java.util.List;
 
@@ -25,4 +26,9 @@ public interface AdminInterface {
     public Role Select_Role_By_Id(int id);
     public List<Role> SelectAll_Role();
     public Role Delete_Role(int id);
+//_________________________________________________edite_user________________________________________________________
+
+    public List<User> SelectAll_User();
+    public User Select_User_By_Id(int id);
+    public User Update_user_role(User user);
 }
