@@ -30,8 +30,10 @@ public class AdminController {
     @PostMapping("/add-product")
     public Produit addProduct(@RequestBody Produit produit) {
         Category category = adminServiceInterface.selectOneCategory(produit.getCategory().getId());
+        System.out.println(category);
         produit.setCategory(category);
         produit.setCreatedAt(new Date());
+        System.out.println(produit);
         return adminServiceInterface.add_Product(produit);
     }
 
@@ -108,7 +110,6 @@ public class AdminController {
     public Role deleteRole(@RequestParam int id){
         return adminServiceInterface.delete_One_Role(id);
     }
-
 
 
 
