@@ -3,7 +3,6 @@ User :
 	Search by title : http://192.168.11.?:8015/product/search-by-title
 	All product by price desc : http://192.168.11.?:8015/product/all-product-by-price-desc
 	All product by price asc : http://192.168.11.?:8015/product/all-product-by-price-asc
-	filter Product by nomProduit
 	Show one product : http://192.168.11.?:8015/product/show-product-detail?id=?
 	Table Events : id , name , city ,  date , time , localisation 
 	Table News : id , name , date , time , #idCategorie
