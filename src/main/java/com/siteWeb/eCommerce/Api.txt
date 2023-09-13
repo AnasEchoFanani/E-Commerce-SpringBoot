@@ -1,10 +1,11 @@
-User : 
+User :
 	All product : http://192.168.11.?:8015/product/all-product
 	Search by title : http://192.168.11.?:8015/product/search-by-title
 	All product by price desc : http://192.168.11.?:8015/product/all-product-by-price-desc
 	All product by price asc : http://192.168.11.?:8015/product/all-product-by-price-asc
 	Show one product : http://192.168.11.?:8015/product/show-product-detail?id=?
+	
 
-
+Tables -----------------------------------------------------------------------------------------------------
 	! DONE : Table Events : id , name , city ,  date , localisation
 	! DONE : Table News : id , name , date , #idCategorie
