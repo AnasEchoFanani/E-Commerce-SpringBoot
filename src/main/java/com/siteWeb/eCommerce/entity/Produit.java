@@ -20,6 +20,7 @@ public class Produit {
     private int qnt;
     private Double prix;
     private String image;
+
     @ManyToOne(cascade = CascadeType.MERGE , fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private  Category category;
@@ -30,4 +31,6 @@ public class Produit {
     @LastModifiedDate
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifiedAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date releaseDate;
 }
