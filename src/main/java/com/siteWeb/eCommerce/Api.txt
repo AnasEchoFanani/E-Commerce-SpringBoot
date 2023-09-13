@@ -2,5 +2,6 @@ User :
 	All product : http://192.168.11.?:8015/product/all-product
 	Search by title : http://192.168.11.?:8015/product/search-by-title
 	All product by price desc : http://192.168.11.?:8015/product/all-product-by-price-desc
+	Show one product : http://192.168.11.?:8015/product/show-product-detail?id=?
 	
 	

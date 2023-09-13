@@ -33,5 +33,10 @@ public class UserController {
         return userServiceInterface.orderByPrice();
     }
 
+    //_____Use api : http://192.168.11.?:8015/product/show-product-detail?id=?"
+    @GetMapping("show-product-detail")
+    public Produit getOneProduct(@RequestParam int id){
+        return userServiceInterface.SelectOneProduct(id);
+    }
 
 }
