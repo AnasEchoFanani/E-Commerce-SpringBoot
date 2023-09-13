@@ -9,4 +9,18 @@ User :
 	Table Events : id , name , city ,  date , time , localisation 
 	Table News : id , name , date , time , #idCategorie
 
-	
+
+
+
+	.zoom-effect {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .zoom-effect img {
+        transition: transform 0.3s;
+    }
+
+    .zoom-effect:hover img {
+        transform: scale(1.1);
+    }
