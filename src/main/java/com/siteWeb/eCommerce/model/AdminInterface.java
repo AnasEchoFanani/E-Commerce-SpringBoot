@@ -4,6 +4,7 @@ import com.siteWeb.eCommerce.entity.Category;
 import com.siteWeb.eCommerce.entity.Produit;
 import com.siteWeb.eCommerce.entity.Role;
 import com.siteWeb.eCommerce.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 

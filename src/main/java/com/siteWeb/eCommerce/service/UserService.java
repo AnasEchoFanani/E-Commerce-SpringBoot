@@ -18,8 +18,14 @@ public class UserService implements UserServiceInterface{
     public List<Produit> select_All_Product(){
         return userInterface.SelectAll_Product();
     }
+    public List<Produit> select_By_Title(String title){
+        return userInterface.Search_By_Title(title);
+    }
+    public List<Produit> orderByPrice(){
+        return userInterface.orderByPrice();
+    }
 
-//___________________________________________________Category________________________________________________________
+    //___________________________________________________Category________________________________________________________
     public Category selectOneCategory(int id){
     return userInterface.Select_Category_By_Id(id);
 }
