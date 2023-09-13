@@ -6,21 +6,5 @@ User :
 	Show one product : http://192.168.11.?:8015/product/show-product-detail?id=?
 
 
-	Table Events : id , name , city ,  date , time , localisation 
-	Table News : id , name , date , time , #idCategorie
-
-
-
-
-	.zoom-effect {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .zoom-effect img {
-        transition: transform 0.3s;
-    }
-
-    .zoom-effect:hover img {
-        transform: scale(1.1);
-    }
+	! DONE : Table Events : id , name , city ,  date , localisation
+	! DONE : Table News : id , name , date , #idCategorie

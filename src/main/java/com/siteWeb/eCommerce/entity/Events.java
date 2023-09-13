@@ -12,25 +12,13 @@ import java.util.Date;
 @Entity
 @Data
 @EntityListeners(AuditingEntityListener.class)
-public class Produit {
+public class Events {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nomProduit;
-    private int qnt;
-    private Double prix;
-    private String image;
-
-    @ManyToOne(cascade = CascadeType.MERGE , fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private  Category category;
-    @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false, updatable = false)
-    private Date createdAt;
-    @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date modifiedAt;
+    private String eventName;
+    private String city;
+    private String localisation;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = true)
     private Date releaseDate;
