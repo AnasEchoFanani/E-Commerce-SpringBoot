@@ -24,6 +24,9 @@ public class UserService implements UserServiceInterface{
     public List<Produit> orderByPrice(){
         return userInterface.orderByPrice();
     }
+    public List<Produit> orderByPriceAsc(){
+        return userInterface.orderByPriceAsc();
+    }
 
     //___________________________________________________Category________________________________________________________
     public Category selectOneCategory(int id){

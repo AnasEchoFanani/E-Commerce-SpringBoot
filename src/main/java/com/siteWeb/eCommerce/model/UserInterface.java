@@ -11,6 +11,7 @@ public interface UserInterface {
     public List<Produit> SelectAll_Product();
     public List<Produit> Search_By_Title(String title);
     public List<Produit> orderByPrice();
+    public List<Produit> orderByPriceAsc();
 //_________________________________________________Category__________________________________________________________
     public Category Select_Category_By_Id(int id);
     public List<Category> SelectAll_Category();

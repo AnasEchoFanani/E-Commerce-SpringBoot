@@ -33,6 +33,12 @@ public class UserController {
         return userServiceInterface.orderByPrice();
     }
 
+    //_____Use api : http://192.168.11.?:8015/product/all-product-by-price-asc"
+    @GetMapping("/all-product-by-price-asc")
+    public List<Produit> getAllProductByPriceAsc(){
+        return userServiceInterface.orderByPriceAsc();
+    }
+
     //_____Use api : http://192.168.11.?:8015/product/show-product-detail?id=?"
     @GetMapping("show-product-detail")
     public Produit getOneProduct(@RequestParam int id){

@@ -46,6 +46,15 @@ public class UserDao implements UserInterface{
         entityManager.close();
         return produits;
     }
+    public List<Produit> orderByPriceAsc() {
+        CriteriaBuilder criteriaBuilder1 = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Produit> criteriaQuery1 = criteriaBuilder1.createQuery(Produit.class);
+        Root<Produit> root = criteriaQuery1.from(Produit.class);
+        criteriaQuery1.orderBy(criteriaBuilder1.asc(root.get("prix")));
+        List<Produit> produits = entityManager.createQuery(criteriaQuery1).getResultList();
+        entityManager.close();
+        return produits;
+    }
 
 //_____________________________________Category____________________________________________________________________
 
