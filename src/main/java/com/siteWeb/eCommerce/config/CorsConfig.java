@@ -19,6 +19,7 @@ public class CorsConfig {
         // Allow specific HTTP methods
         config.addAllowedMethod("GET");
         config.addAllowedMethod("POST");
+        config.addAllowedMethod("PATCH");
         config.addAllowedMethod("PUT");
         config.addAllowedMethod("DELETE");
 

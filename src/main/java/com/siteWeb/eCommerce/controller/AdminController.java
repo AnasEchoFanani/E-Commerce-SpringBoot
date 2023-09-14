@@ -70,7 +70,7 @@ public class AdminController {
     }
 
     //_____Use api : http://192.168.11.130:8015/admin/update-category
-    @PutMapping("/update-category")
+    @PatchMapping ("/update-category")
     public Category updateCategory(@RequestBody Category category){
         category.setModifiedAt(new Date());
         return adminServiceInterface.update_One_Category(category);
