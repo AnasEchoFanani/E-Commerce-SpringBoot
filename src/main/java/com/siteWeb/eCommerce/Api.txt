@@ -12,4 +12,13 @@ Tables -------------------------------------------------------------------------
 
 
 TODO -------------------------------------------------------------------------------------------------------
-
+    Event : front end && back end
+    Panier : front end
+    News : front end && back end
+    All product : Update font end
+    Commande : front end && back end
+    Search : front end && back end Update by category
+    User : {
+        front end : CRUD profile && afficher profile && login && logout
+        back end : CRUD profile && hash && login => session , cookies && logout => delete session
+        }
