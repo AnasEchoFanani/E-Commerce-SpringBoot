@@ -22,7 +22,19 @@ TODO ---------------------------------------------------------------------------
         front end : CRUD profile && afficher profile && login && logout
         back end : CRUD profile && hash && login => session , cookies && logout => delete session
         }
-
+    Search By category : back end
 
 LIEN ---------------------------------------------------------------------------------------------------------------------------
     https://freefrontend.com/bootstrap-product-cards/
+
+
+    {
+        "nomProduit": "opaa",
+        "qnt": 2,
+        "prix": 247.5,
+        "image": "https://www.robbieewing.com/wp-content/uploads/2021/04/Bella-Dancer-476.jpg",
+        "category": {
+            "id": 1,
+            "nomCategori": "Anas"
+        }
+    }

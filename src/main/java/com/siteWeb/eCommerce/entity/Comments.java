@@ -12,25 +12,23 @@ import java.util.Date;
 @Entity
 @Data
 @EntityListeners(AuditingEntityListener.class)
-public class Produit {
+public class Comments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nomProduit;
-    private int qnt;
-    private Double prix;
-    private String image;
+    private String comment;
+    private int stars;
     @ManyToOne(cascade = CascadeType.MERGE , fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private  Category category;
+    private Produit produit;
+    @OneToOne
+    private User user;
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Date createdAt;
     @LastModifiedDate
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "modified_at")
     private Date modifiedAt;
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = true)
-    private Date releaseDate;
 }

@@ -20,6 +20,10 @@ public class UserController {
         return userServiceInterface.select_All_Product();
     }
 
+    @GetMapping("select-by-id")
+    public Produit getProductById(@RequestParam int id){
+        return userServiceInterface.SelectOneProduct(id);
+    }
     //_____Use api : http://192.168.11.?:8015/product/search-by-title"
     @GetMapping("/search-by-title")
     public List<Produit> getProduitByTitle(@RequestParam String title){
@@ -40,7 +44,7 @@ public class UserController {
     }
 
     //_____Use api : http://192.168.11.?:8015/product/show-product-detail?id=?"
-    @GetMapping("show-product-detail")
+    @GetMapping("/show-product-detail")
     public Produit getOneProduct(@RequestParam int id){
         return userServiceInterface.SelectOneProduct(id);
     }
