@@ -22,3 +22,7 @@ TODO ---------------------------------------------------------------------------
         front end : CRUD profile && afficher profile && login && logout
         back end : CRUD profile && hash && login => session , cookies && logout => delete session
         }
+
+
+LIEN ---------------------------------------------------------------------------------------------------------------------------
+    https://freefrontend.com/bootstrap-product-cards/
