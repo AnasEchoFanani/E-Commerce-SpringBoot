@@ -19,8 +19,13 @@ public class Produit {
     private String nomProduit;
     private int qnt;
     private Double prix;
-    private String image;
-    @ManyToOne(cascade = CascadeType.MERGE , fetch = FetchType.LAZY)
+    @Column(nullable = true, length = 600)
+    private String image_1;
+    @Column(nullable = true, length = 600)
+    private String image_2;
+    @Column(nullable = true, length = 600)
+    private String image_3;
+    @ManyToOne(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private  Category category;
     @CreatedDate

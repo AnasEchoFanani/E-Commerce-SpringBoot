@@ -20,9 +20,9 @@ public class UserController {
         return userServiceInterface.select_All_Product();
     }
 
-    @GetMapping("select-by-id")
-    public Produit getProductById(@RequestParam int id){
-        return userServiceInterface.SelectOneProduct(id);
+    @GetMapping("/select-product-from-category")
+    public List<Produit> getAllProsuctFromCategory(@RequestParam int categoryId){
+        return userServiceInterface.SelectProductFromOneCategory(categoryId);
     }
     //_____Use api : http://192.168.11.?:8015/product/search-by-title"
     @GetMapping("/search-by-title")

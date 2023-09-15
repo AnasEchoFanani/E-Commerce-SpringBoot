@@ -4,7 +4,7 @@ User ---------------------------------------------------------------------------
 	All product by price desc : http://192.168.11.CHANGE:8015/product/all-product-by-price-desc
 	All product by price asc : http://192.168.11.CHANGE:8015/product/all-product-by-price-asc
 	Show one product : http://192.168.11.CHANGE:8015/product/show-product-detail?id=?
-
+	Select product from category id : http://192.168.11.CHANGE:8015/product/select-product-from-category?id=?
 
 DONE -----------------------------------------------------------------------------------------------------
 	! DONE : Table Events : id , name , city ,  date , localisation

@@ -9,6 +9,7 @@ public interface UserServiceInterface {
 //______________________________________________Product_____________________________________________________________
     public Produit SelectOneProduct(int id);
     public List<Produit> select_All_Product();
+    public List<Produit> SelectProductFromOneCategory(int categoryId);
     public List<Produit> select_By_Title(String title);
     public List<Produit> orderByPrice();
     public List<Produit> orderByPriceAsc();

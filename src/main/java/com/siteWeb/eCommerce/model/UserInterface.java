@@ -9,6 +9,7 @@ public interface UserInterface {
 //______________________________________________Product______________________________________________________________
     public Produit Select_Product_By_Id(int id);
     public List<Produit> SelectAll_Product();
+    public List<Produit> getProductsByCategoryId(int categoryId);
     public List<Produit> Search_By_Title(String title);
     public List<Produit> orderByPrice();
     public List<Produit> orderByPriceAsc();

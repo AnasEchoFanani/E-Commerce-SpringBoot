@@ -15,6 +15,9 @@ public class UserService implements UserServiceInterface{
     public Produit SelectOneProduct(int id){
         return userInterface.Select_Product_By_Id(id);
     }
+    public List<Produit> SelectProductFromOneCategory(int categoryId){
+        return userInterface.getProductsByCategoryId(categoryId);
+    }
     public List<Produit> select_All_Product(){
         return userInterface.SelectAll_Product();
     }
